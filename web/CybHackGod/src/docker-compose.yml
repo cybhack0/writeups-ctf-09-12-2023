@@ -1,0 +1,26 @@
+version: "3.3"
+services:
+  app :
+    build: .
+    ports:
+      - 13377:13377
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: hahahahahahahaha_asdjasjdjas
+      POSTGRES_DB: vuln
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      SERVER_HOST: 0.0.0.0:13377
+      ADMIN_PASSWORD_HASH: 3f56b2d2b417f82eece3137a166b1486
+      RANDOM_ADMIN_ID: 1337832
+      RANDOM_TABLE_SYMBOLS: uihegiqpwu_gqpiqouiewdkwq
+      FLAG_FIRST_PART: khctf{CTF_P14y3R_1n_Th3_H00D
+      FLAG_SECOND_PART: _4nD_Th15_15_G00D}
+    
+  db:
+    image: postgres:15.2
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: hahahahahahahaha_asdjasjdjas
+      POSTGRES_DB: vuln
